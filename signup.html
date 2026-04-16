@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | East Point College of Engineering</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <span class="campus-tag">East Point College of Engineering</span>
+        <h1>Create Your Account</h1>
+        <p>Join the portal to manage attendance, hostel, mess, and library access.</p>
+      </div>
+    </header>
+
+    <section class="page-card">
+      <form id="signup-form" class="login-form">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@student.edu" required />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Choose a password" required />
+
+        <button class="button primary" type="submit">Sign Up</button>
+      </form>
+
+      <div class="login-actions">
+        <a class="button secondary" href="login.html" id="login-button">Already have an account</a>
+        <a class="link-back" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

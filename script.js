@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const uploadInput = document.getElementById("upload-resource");
   const uploadStatus = document.createElement("p");
   uploadStatus.className = "status-note";
-  uploadInput.parentNode.appendChild(uploadStatus);
+
+  if (uploadInput && uploadInput.parentNode) {
+    uploadInput.parentNode.appendChild(uploadStatus);
+  }
 
   navLinks.forEach((link) => {
     link.addEventListener("click", function () {
@@ -15,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function filterBooks() {
+    if (!bookSearchInput || !bookItems.length) return;
+
     const query = bookSearchInput.value.trim().toLowerCase();
     let visibleCount = 0;
 
@@ -34,17 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  bookSearchInput.addEventListener("input", filterBooks);
+  if (bookSearchInput) {
+    bookSearchInput.addEventListener("input", filterBooks);
+  }
 
-  uploadInput.addEventListener("change", function () {
-    const fileName = this.files.length ? this.files[0].name : "No file selected";
-    uploadStatus.textContent = `Selected file: ${fileName}`;
-  });
+  if (uploadInput) {
+    uploadInput.addEventListener("change", function () {
+      const fileName = this.files.length ? this.files[0].name : "No file selected";
+      uploadStatus.textContent = `Selected file: ${fileName}`;
+    });
+  }
 
   const loginBtn = document.getElementById("login-button");
   const signupBtn = document.getElementById("signup-button");
   const complaintBtn = document.getElementById("complaint-submit");
   const feedbackBtn = document.getElementById("mess-feedback");
+  const loginForm = document.getElementById("login-form");
+  const signupForm = document.getElementById("signup-form");
 
   function showToast(message) {
     const toast = document.createElement("div");
@@ -65,14 +76,36 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loginBtn) {
     loginBtn.addEventListener("click", function (event) {
       event.preventDefault();
-      showToast("Login requested. JWT session will be handled by backend.");
+      showToast("Opening login page...");
+      window.location.href = "login.html";
     });
   }
 
   if (signupBtn) {
     signupBtn.addEventListener("click", function (event) {
       event.preventDefault();
-      showToast("Signup requested. Password hashing should be applied on backend.");
+      showToast("Opening signup page...");
+      window.location.href = "signup.html";
+    });
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      showToast("Login successful. Redirecting...");
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 700);
+    });
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      showToast("Account created. Redirecting to login...");
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 700);
     });
   }
 

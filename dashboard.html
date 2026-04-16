@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | East Point College of Engineering</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <span class="campus-tag">East Point College of Engineering</span>
+        <h1>Student Dashboard</h1>
+        <p>Review attendance, hostel status, mess balance, and library activity from one place.</p>
+      </div>
+    </header>
+
+    <nav class="page-nav">
+      <ul class="nav-list">
+        <li><a class="active" href="dashboard.html">Dashboard</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="hostel.html">Hostel</a></li>
+        <li><a href="mess.html">Mess</a></li>
+        <li><a href="library.html">Library</a></li>
+      </ul>
+    </nav>
+
+    <section class="page-card">
+      <div class="page-grid">
+        <div class="info-card">
+          <h2>Attendance</h2>
+          <p>Current attendance completion is 92% across all subjects.</p>
+        </div>
+        <div class="info-card">
+          <h2>Hostel status</h2>
+          <p>Room confirmed and assigned at East Wing Block B.</p>
+        </div>
+      </div>
+
+      <div class="page-grid">
+        <div class="info-card">
+          <h2>Mess balance</h2>
+          <p>Remaining meal credits: 18. Use the mess page to view the weekly menu.</p>
+        </div>
+        <div class="info-card">
+          <h2>Library</h2>
+          <p>3 books currently checked out. Return on time to avoid penalties.</p>
+        </div>
+      </div>
+
+      <div class="login-actions">
+        <a class="button primary" href="attendance.html">View attendance</a>
+        <a class="button secondary" href="hostel.html">Visit hostel portal</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
