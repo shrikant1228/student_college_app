@@ -18,19 +18,19 @@
     </header>
 
     <section class="page-card">
-      <form id="login-form" class="login-form">
+      <form id="login-form" class="login-form" action="https://student-college-app-backend.onrender.com/login" method="POST">
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="you@student.edu" required />
+        <input id="email" type="email" name="email" placeholder="you@student.edu" required />
 
         <label for="password">Password</label>
-        <input id="password" type="password" placeholder="Enter your password" required />
+        <input id="password" type="password" name="password" placeholder="Enter your password" required />
 
         <button class="button primary" type="submit">Login</button>
       </form>
 
       <div class="login-actions">
-        <a class="button secondary" href="signup.html" id="signup-button">Create account</a>
-        <a class="link-back" href="index.html">Back to home</a>
+        <a class="button secondary" href="https://student-college-app-backend.onrender.com/signup" id="signup-button">Create account</a>
+        <a class="link-back" href="https://student-college-app.vercel.app">Back to home</a>
       </div>
     </section>
   </main>
